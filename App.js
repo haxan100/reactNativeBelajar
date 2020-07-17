@@ -1,4 +1,5 @@
-import React from 'react';
+import React , {Component} from 'react';
+import babi  from './babi.jpeg';
 import {
   SafeAreaView,
   StyleSheet,
@@ -6,7 +7,7 @@ import {
   TextInput,
   View,
   Text,
-  Button,
+  Image,
   StatusBar,
   TouchableOpacity,
   Alert,
@@ -20,105 +21,155 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const App: () => React$Node = () => {
+function App() {
 
-
-
-  return (
-    <View>
-      <Text>
-        Masukan Nama Anda:
-      </
-      
-      
-      Text>
-      
-      <TextInput TextInput placeholder= "usernamenya  " >
-      </TextInput>
-      <Text>
-        Msukan Password
-      </Text>
-      <TextInput placeholder="passwordnya nyonya...">
-
-      </TextInput>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-            <Button
-            title = "Tombol..."
-            color = "#f194ee"
-            onPress = {
-              () => Alert.alert('Herdisk Gila.....')
-            }
-            />
-    </View>
-
-  );
+return <Testing/>
 };
 
 
+function Testing() {
+  return <View  >
+    <Text style={styles.text}>
+      Belajar styling
+    </Text>
+    <Belanja/>
+  </View>
+  
+}
 
 
+function Sample() {
+  return<View style={{width:80}}>
+  <Text> HHH</Text>
+  <Profile/>
+  <Text> kkkk</Text>
+  <Text >popop </Text>
+  <Gambar/>
+  <Home/>
+  <TextInput style={{borderWidth:1}} />
+  < BoxHijau / >
 
+</View>
+  
+}
 
+function Home() {
+  return <View>
+    <Text>
+      Testing....
+    </Text>
+  </View>
+  
+}
 
+function Gambar() {
+  return <Image 
+  style = {
+    styles.tinyLogo
+  }
+  source = {
+    {
+     babi
+    }
+  }
+  />
+  
+}
+
+class BoxHijau extends Component{
+  render(){
+    return <View>
+      <Text>
+        Hello M*therF*cker....
+      </Text>
+    </View>
+  }
+}
+class Profile extends Component{
+  render(){
+    return<View><Text>Hello Bicth</Text>
+    </View>
+  }
+}
+function Belanja() {
+  
+    return <View style = {
+      styles.Luar
+    } >
+      <Image
+      style = {
+        styles.tinyLogo
+      }
+      source = {
+        {
+          uri: 'https://placeimg.com/640/480/tech'
+        }
+      }
+      />
+
+      <Text style={styles.BawahTeks}>Headset Ori</Text>
+      <Text style={styles.Harga}>Rp. 300.000</Text>
+      <Text style={styles.Alamat}>Jakarta Barat</Text>
+      <View View style = {
+        styles.TombolBg
+      } >
+        <Text style={styles.Tombol}>
+          BELI
+        </Text>
+      </View>
+    </View>
+  
+}
 const styles = StyleSheet.create({
-  teksku: {
-    backgroundColor: Colors.lighter,
+  text:{
+    fontSize:20,
+    fontWeight:'bold',
+    textShadowColor:'blue',
+    color:'blue',
+    marginLeft:100
   },
-  teksku: {
-    position: 'absolute',
-    right: 0,
+  tinyLogo:{
+    width:188,
+    height:107,
+    borderRadius:8,
+    
   },
-  body: {
-    backgroundColor: Colors.white,
+  Luar:{
+    padding:12,
+    backgroundColor:'#f2f2f2f2',
+    width:212
   },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  BawahTeks:{
+    fontSize:14,fontWeight:'bold', marginTop:14
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-    teksku: {
-      color: Colors.dark,
-      fontSize:52,
-      fontWeight: '600',
-      padding: 4,
-      paddingRight: 12,
-      textAlign: 'right',
+    Harga: {
+      color:'#f2994a',
+      fontSize: 14,
+      fontWeight: 'bold',
+      marginTop: 7
     },
+    Alamat: {
+      color: '#f2224a',
+      fontSize: 14,
+      fontWeight: 'bold',
+      marginTop: 7
+    },
+    TombolBg: {
+      backgroundColor: '#6fcf97',
+        marginTop: 20,
+      borderRadius: 20
+
+    },
+     Tombol: {
+      fontSize:14,
+      fontWeight:'600',
+      color:'white',
+      textAlign:'center',
+      paddingTop:6,
+      paddingBottom:6,
+     }
 });
+
+
 
 export default App;
